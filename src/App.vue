@@ -1,12 +1,12 @@
 <template>
   <div class="container">
-    <NavBar></NavBar>
-    <Card v-for="food in foods" 
-            :key="food.product" 
-            :price="food.price" 
-            :productname="food.product"
-            :manufacturer="food.manufacturer" 
-            :rating="food.rating"></Card>
+    <NavBar/>
+    <Card v-for="food in foods"  
+            v-bind:key="food._id"
+            v-bind:price="food.price" 
+            v-bind:product="food.product"
+            v-bind:manufacturer="food.manufacturer" 
+            v-bind:rating="food.rating"/>
 
   </div>
 </template>
@@ -21,9 +21,11 @@ export default {
     NavBar,
     Card,
   },
-    setup: {
-    foods,
-    }
+    setup() {
+    return {
+      foods,
+    };
+  }
 }
 
 // let cart = [];
