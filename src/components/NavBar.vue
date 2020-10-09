@@ -26,23 +26,20 @@
         </div>
       </li>
     </ul>
-    <span class="navbar-text">
-      Wallet: $60
-    </span>
+    <Wallet walletAmount=60></Wallet>
   </div>
 
- 
 </nav>
-
-
-
 
 </template>
 
 <script>
+import Wallet from "./Wallet.vue"
 
 export default {
-  
+  components: {
+    Wallet,
+  }
 }
 
 </script>

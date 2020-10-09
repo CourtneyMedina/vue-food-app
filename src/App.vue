@@ -2,11 +2,11 @@
   <div class="container">
     <NavBar/>
     <Card v-for="food in foods"  
-            v-bind:key="food._id"
-            v-bind:price="food.price" 
-            v-bind:product="food.product"
-            v-bind:manufacturer="food.manufacturer" 
-            v-bind:rating="food.rating"/>
+            :key="food._id"
+            :price="food.price" 
+            :product="food.product"
+            :manufacturer="food.manufacturer" 
+            :rating="food.rating"></Card>
 
   </div>
 </template>
@@ -22,8 +22,9 @@ export default {
     Card,
   },
     setup() {
+      // console.log(foods.default)     // If objects are being imported as modules, check for properties
     return {
-      foods,
+      foods: foods.default,
     };
   }
 }
@@ -40,15 +41,16 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background-color: red;
 }
 
 .container {
   margin: 3rem;
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: auto auto auto;
   column-gap: 1rem;
   row-gap: 0.1rem;
-  background-color: red;
 }
+
+
 </style>
